@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+// import { useState } from "react";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LoginPage from "./pages/LoginPage";
+import SignUpPage from "./pages/SignUpPage";
+import HomePage from "./pages/HomePage";
+import RegisterIncome from "./pages/RegisterIncome";
+import RegisterOutflow from "./pages/RegisterOutflow";
+
+// import { AppProvider } from "../context";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="masterContainer">
+        {/* <AppProvider> */}
+        <Routes>
+          <Route path="/" element={<LoginPage />} />
+          <Route path="/cadastro" element={<SignUpPage />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/nova-entrada" element={<RegisterIncome />} />
+          <Route path="/nova-saida" element={<RegisterOutflow />} />
+        </Routes>
+        {/* </AppProvider> */}
+      </div>
+    </BrowserRouter>
   );
 }
 

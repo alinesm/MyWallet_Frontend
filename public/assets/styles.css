@@ -1,0 +1,240 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fafafa;
+}
+
+.masterContainer {
+  width: 375px;
+  height: 667px;
+  min-height: 100%;
+  margin: 100px auto;
+  background-color: #9567be;
+  display: flex;
+  justify-content: center;
+}
+
+.loginPageContainer,
+.singUpContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginPageContainer h1,
+.singUpContainer h1 {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  color: #ffffff;
+}
+
+.loginPageContainer p,
+.singUpContainer p {
+  text-decoration: none;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  color: #ffffff;
+}
+
+.loginPageContainer .inputsContainer,
+.singUpContainer .inputsContainer,
+.registerIncomeContainer .inputsContainer,
+.registerOutflowContainer .inputsContainer {
+  display: flex;
+  margin-top: 36px;
+  width: 326px;
+}
+
+.loginPageContainer .inputsContainer input,
+.singUpContainer .inputsContainer input,
+.registerIncomeContainer .inputsContainer input,
+.registerOutflowContainer .inputsContainer input {
+  width: 100%;
+  height: 45px;
+  background: #ffffff;
+  border: 1px solid #d5d5d5;
+  border-radius: 5px;
+  margin-bottom: 6px;
+  font-family: "Lexend Deca";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19.976px;
+  line-height: 25px;
+}
+
+.loginPageContainer .inputsContainer input::placeholder,
+.singUpContainer .inputsContainer input::placeholder,
+.registerIncomeContainer .inputsContainer input::placeholder,
+.registerOutflowContainer .inputsContainer input::placeholder {
+  padding-left: 11px;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  color: #000000;
+}
+
+.loginPageContainer .inputsContainer button,
+.singUpContainer .inputsContainer button,
+.registerIncomeContainer .inputsContainer button,
+.registerOutflowContainer .inputsContainer button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 45px;
+  border: none;
+  background: #a328d6;
+  border-radius: 4.63636px;
+  font-family: "Lexend Deca";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20.976px;
+  line-height: 26px;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 25px;
+}
+
+.homePageContainer .containerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.homePageContainer h1,
+.registerIncomeContainer h1,
+.registerOutflowContainer h1 {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 31px;
+  color: #ffffff;
+}
+
+.homePageContainer .noDataBox {
+  width: 326px;
+  height: 446px;
+  left: 25px;
+  top: 78px;
+  background: #ffffff;
+  border-radius: 5px;
+  padding: 0 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+
+  color: #868686;
+}
+
+.homePageContainer .dataBox {
+  width: 326px;
+  height: 446px;
+  padding: 23px 12px 15px 12px;
+  background: #ffffff;
+  border-radius: 5px;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.homePageContainer .dataBox .total {
+  display: flex;
+  justify-content: space-between;
+}
+
+.homePageContainer .dataBox .total .totalText {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 20px;
+  /* identical to box height */
+
+  color: #000000;
+}
+
+.homePageContainer .dataBox .total .totalValue {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 20px;
+  text-align: right;
+  color: #03ac00;
+}
+
+.homePageContainer .incomeButton,
+.homePageContainer .outflowButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 155px;
+  height: 114px;
+  background: #a328d6;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.homePageContainer .incomeButton p,
+.homePageContainer .outflowButton p {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 20px;
+  color: #ffffff;
+  width: 64px;
+}
+
+.homePageContainer .buttonsContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 13px 0;
+}
+
+.registerDataContainer {
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.registerDataContainer .date {
+  margin-right: 10px;
+  color: #c6c6c6;
+}
+
+.registerDataContainer .description {
+  color: #000000;
+}
+
+.registerDataContainer .value {
+  text-align: right;
+  /* color: #c70000; */
+  color: #03ac00;
+}
