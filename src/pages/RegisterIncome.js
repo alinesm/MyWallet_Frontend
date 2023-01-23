@@ -1,28 +1,40 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function RegisterIncome() {
-  const [money, setMoney] = useState("");
+function RegisterIncome({ token, listData, setListData }) {
+  const [value, setValue] = useState("");
   const [description, setDescription] = useState("");
   const navigate = useNavigate();
 
   function handleSaveIncome(e) {
     e.preventDefault();
-    // // setIsLoading(true);
-    // const URL =`${REACT_APP_API_URL}/nova-entrada`
-    // const body = { email, password };
+    const body = {
+      description: description,
+      value: parseFloat(value).toFixed(2),
+    };
 
-    // const promise = axios.post(URL, body);
-    // promise.then((res) => {
-    //   setToken(res.data.token);
-    //   setUserInfo({
-    //     email: res.data.email,
-    //     password: res.data.password,
-    //   });
+    const URL = `${process.env.REACT_APP_API_URL}/nova-entrada`;
 
-    navigate("/home");
-    // });
-    // promise.catch((err) => console.log(err));
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    const promise = axios.post(URL, body, config);
+    promise.then((res) => {
+      const aux = [...listData, res.data];
+      setListData(aux);
+      navigate("/home");
+    });
+    promise.catch((err) => {
+      alert("descrição já castrada");
+      console.log(err.response.data);
+    });
+
+    setValue("");
+    setDescription("");
+    // setListData([]);
   }
 
   return (
@@ -33,8 +45,8 @@ function RegisterIncome() {
         <form>
           <input
             data-test="email-input"
-            onChange={(e) => setMoney(e.target.value)}
-            value={money}
+            onChange={(e) => setValue(e.target.value)}
+            value={value}
             type="text"
             placeholder="Valor"
           />

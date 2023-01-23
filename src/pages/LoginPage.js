@@ -1,33 +1,32 @@
+import axios from "axios";
 import React, { useState } from "react";
-// import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
-function LoginPage() {
+function LoginPage({ token, setToken, setName }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   function handleLogin(e) {
     e.preventDefault();
-    // // setIsLoading(true);
-    const URL =
-      // `${REACT_APP_API_URL}/login`;
-      // const body = { email, password };
 
-      // const promise = axios.post(URL, body);
-      // promise.then((res) => {
-      //   setToken(res.data.token);
-      //   setUserInfo({
-      //     email: res.data.email,
-      //     password: res.data.password,
-      //   });
+    const URL = `${process.env.REACT_APP_API_URL}/`;
+    const body = { email, password };
 
+    const promise = axios.post(URL, body);
+    promise.then((res) => {
+      setToken(res.data.token);
+      setName(res.data.name);
       navigate("/home");
-    // });
-    // promise.catch((err) => console.log(err));
+    });
+    promise.catch((err) => {
+      alert("email ou senha incorreta");
+      console.log(err);
+    });
   }
 
-  // console.log(token);
+  console.log(token);
+
   return (
     <div className="loginPageContainer">
       <h1>My Wallet</h1>
@@ -39,23 +38,16 @@ function LoginPage() {
             onChange={(e) => setEmail(e.target.value)}
             value={email}
             type="email"
-            placeholder="email..."
-            // disabled={isLoading}
+            placeholder="E-mail"
           />
           <input
             data-test="password-input"
             onChange={(e) => setPassword(e.target.value)}
             value={password}
             type="password"
-            placeholder="senha..."
-            // disabled={isLoading}
+            placeholder="Senha"
           />
-          <button
-            data-test="login-btn"
-            // disabled={isLoading}
-            type="submit"
-            onClick={handleLogin}
-          >
+          <button data-test="login-btn" type="submit" onClick={handleLogin}>
             Entrar
           </button>
         </form>

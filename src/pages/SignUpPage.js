@@ -11,17 +11,21 @@ function SignUpPage() {
 
   function handleSubscription(e) {
     e.preventDefault();
-    // setIsLoading(true);
-    // const URL = `${REACT_APP_API_URL}/cadastro`
+    const URL = `${process.env.REACT_APP_API_URL}/cadastro`;
 
-    // const body = { email: email, name: name, password: password };
+    const body = {
+      email: email,
+      name: name,
+      password: password,
+      confirmPassword: confirmPassword,
+    };
 
-    // const promise = axios.post(URL, body);
-    // promise.then((res) => {
-    //   alert("Cadastro realizado!");
-    //   navigate("/");
-    // });
-    // promise.catch((err) => console.log(err));
+    const promise = axios.post(URL, body);
+    promise.then((res) => {
+      alert("Cadastro realizado!");
+      navigate("/");
+    });
+    promise.catch((err) => console.log(err));
   }
 
   return (

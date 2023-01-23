@@ -58,6 +58,7 @@ body {
 .singUpContainer .inputsContainer input,
 .registerIncomeContainer .inputsContainer input,
 .registerOutflowContainer .inputsContainer input {
+  padding-left: 11px;
   width: 100%;
   height: 45px;
   background: #ffffff;
@@ -75,7 +76,6 @@ body {
 .singUpContainer .inputsContainer input::placeholder,
 .registerIncomeContainer .inputsContainer input::placeholder,
 .registerOutflowContainer .inputsContainer input::placeholder {
-  padding-left: 11px;
   font-family: "Raleway";
   font-style: normal;
   font-weight: 400;
@@ -133,7 +133,6 @@ body {
   background: #ffffff;
   border-radius: 5px;
   padding: 0 60px;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -149,7 +148,8 @@ body {
 
 .homePageContainer .dataBox {
   width: 326px;
-  height: 446px;
+  max-height: 446px;
+  /* overflow-y: auto; */
   padding: 23px 12px 15px 12px;
   background: #ffffff;
   border-radius: 5px;
@@ -163,7 +163,13 @@ body {
   justify-content: space-between;
 }
 
+.homePageContainer .dataBox .listData {
+  overflow-y: auto;
+  /* margin-bottom: 50px; */
+}
+
 .homePageContainer .dataBox .total {
+  margin-top: 20px;
   display: flex;
   justify-content: space-between;
 }
@@ -174,19 +180,24 @@ body {
   font-weight: 700;
   font-size: 17px;
   line-height: 20px;
-  /* identical to box height */
-
   color: #000000;
 }
 
-.homePageContainer .dataBox .total .totalValue {
+.homePageContainer .dataBox .total {
   font-family: "Raleway";
   font-style: normal;
   font-weight: 400;
   font-size: 17px;
   line-height: 20px;
   text-align: right;
+}
+
+.positive {
   color: #03ac00;
+}
+
+.negative {
+  color: #c70000;
 }
 
 .homePageContainer .incomeButton,
@@ -233,8 +244,12 @@ body {
   color: #000000;
 }
 
-.registerDataContainer .value {
+.registerDataContainer .entry {
   text-align: right;
-  /* color: #c70000; */
   color: #03ac00;
+}
+
+.registerDataContainer .outflow {
+  text-align: right;
+  color: #c70000;
 }

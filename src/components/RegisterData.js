@@ -1,13 +1,15 @@
 import React from "react";
 
-function RegisterData() {
+function RegisterData({ item }) {
   return (
     <div className="registerDataContainer">
       <div className="auxContainer">
-        <span className="date">30/11</span>
-        <span className="description">Almoço Mae</span>
+        <span className="date">{item.date}</span>
+        <span className="description">{item.description}</span>
       </div>
-      <div className="value">39.90</div>
+      <div className={item.type === "entry" ? "entry" : "outflow"}>
+        {item.value}
+      </div>
     </div>
   );
 }
