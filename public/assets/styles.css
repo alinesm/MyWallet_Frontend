@@ -148,7 +148,7 @@ body {
 
 .homePageContainer .dataBox {
   width: 326px;
-  max-height: 446px;
+  height: 446px;
   /* overflow-y: auto; */
   padding: 23px 12px 15px 12px;
   background: #ffffff;

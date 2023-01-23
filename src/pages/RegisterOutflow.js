@@ -28,12 +28,12 @@ function RegisterOutflow({ token, listData, setListData }) {
       navigate("/home");
     });
     promise.catch((err) => {
+      alert("descrição já castrada");
       console.log(err.response.data);
     });
 
     setValue("");
     setDescription("");
-    // setListData([]);
   }
 
   return (

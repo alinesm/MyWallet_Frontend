@@ -34,7 +34,6 @@ function RegisterIncome({ token, listData, setListData }) {
 
     setValue("");
     setDescription("");
-    // setListData([]);
   }
 
   return (
